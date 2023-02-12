@@ -3,23 +3,28 @@ A train-line program in Dr racket
 
 
 #lang racket/gui
+
 (require (planet jphelps/guiml))
+
 (define NorthernLine (list "Edgware" "Burnt Oak" "Colindale" "Hendon Central" "Brent Cross" "Golders Greens" "Hampstead" "Belsize Park" "Chalk Farm"))
 
 (struct journey-info (station new-train next-station-time disability-friendly toilets))
 
 
  
-( define Go '( station 1 station2 station3 station4 station5 station6 station7 station8 station9))
 
 
 
 
 ;This is the first window that will be shown to the user once the program is run.
+
+
 (define frame ( new frame%
                     (label "ROUTEMASTER")
                     (width 500)
                     (height 500)))
+                    
+                    
 (send frame show #t)
 
 (define text ( new message%
@@ -30,9 +35,13 @@ A train-line program in Dr racket
 
 
 ; An input in the form of a drop down box is given to the user to select their starting location and destination.
+
+
 ( define start (new choice%
                     (label " START ") (parent frame)
                (choices (list "Edgware" "Burnt Oak" "Colindale" "Hendon Central" "Brent Cross" "Golders Greens" "Hampstead" "Belsize Park" "Chalk Farm"))))
+               
+               
 ( define end ( new choice%
                    ( label " END ") (parent frame)
                    ( choices (list "Edgware" "Burnt Oak" "Colindale" "Hendon Central" "Brent Cross" "Golders Greens" "Hampstead" "Belsize Park" "Chalk Farm")
@@ -40,6 +49,8 @@ A train-line program in Dr racket
 
                              
 ; This is the second window that will be shown to display the journey.
+
+
 ( define frame2 ( new frame%
                       (label "RESULTS")
                       (width 300)
